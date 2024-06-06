@@ -2,7 +2,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+app_name='shop'
 urlpatterns = [
-    path('',views.home,name='home'),
+    path('',views.allproduct,name='allproduct'),
+    path('<slug:c_slug>/',views.allproduct,anme='product+by_category'),
     
 ]
