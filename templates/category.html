@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block metadescription %}
+{% if category %}
+{{ category.description|truncatewords:155 }}
+{% else %}
+Welcome to Supreme digital shop 
+{% endif %}
+{% endblock %}
+{% block title %}
+{% if category %}
+{{ category.name }} - Supreme Digital shop
+{% else %}
+See our latest collection - Supreme Digital shop
+{% endif %}
+{% endblock %}
