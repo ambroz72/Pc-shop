@@ -1,8 +1,5 @@
 from django.shortcuts import render
-
-# Create your views here.
-def home(request):
-    return render(request,'home.html')
+from pcapp.models import Product
 
 def allproduct(request,c_slug=None):
     c_page=None
@@ -12,4 +9,4 @@ def allproduct(request,c_slug=None):
         products=Product.objects.all().filter(category=c_page,available=True)
     else:
         products=Product.objects.all().filter(available=True)
-    return render(request,'castegory.html',{'category':c_page,'products':products})
+    return render(request,'category.html',{'category':c_page,'products':products})   
